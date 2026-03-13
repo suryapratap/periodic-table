@@ -16,6 +16,8 @@
         /* left: 0; */
         /* right: 0; */
         width: calc(100vw - 10px);
+        /* cap width so the 10-row grid never exceeds 75vh: W = 135vh + 4px */
+        max-width: calc(135vh + 4px);
     }
 
     .wrapper>input {
@@ -38,7 +40,7 @@
 
     .element {
         position: relative;
-        font-size: 0.5vw;
+        font-size: min(0.5vw, 0.675vh);
         padding-bottom: 100%;
         cursor: pointer;
         color: #fff;
@@ -86,11 +88,13 @@
     }
 
     .element .symbol {
-        font-size: 1.7vw;
+        font-size: min(1.7vw, 2.295vh);
     }
 
     .element .name {
-        font-size: 0.7vw;
+        font-size: min(0.7vw, 0.945vh);
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     .element .atomic-mass {
@@ -203,7 +207,7 @@
     .placeholder {
         position: relative;
         z-index: -1;
-        font-size: 1vw;
+        font-size: min(1vw, 1.35vh);
         padding-bottom: 100%;
         color: #fff;
         transition: 500ms;
@@ -333,7 +337,7 @@
         grid-row: 1;
         grid-column-start: 3;
         grid-column-end: 17;
-        font-size: 0.8vw;
+        font-size: min(0.8vw, 1.08vh);
         line-height: 1.5;
         display: flex;
         align-items: center;
